@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>
+
+    </title>
+    <body>
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.errors}}
+        Title:<input type="text" name="title"><br>
+        Posted By:<input type="text" name="posted_by"><br>
+        Description:<input type="text" name="question_desc"><br>
+        Image:<input type="file" name="question_img"> <br>
+        Category:<select name="category">
+        {%for cat in category %}
+        <option value="{{cat.id}}">{{cat.title}}</option>
+        {% endfor %}
+    </select><br>
+       <input type="hidden" name="question_votes" value="0">
+       <input type="submit" value="Submit"/>
+    </form>
+</body>
+</html>
