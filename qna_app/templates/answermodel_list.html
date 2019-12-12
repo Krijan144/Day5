@@ -7,13 +7,13 @@
 </head>
 <body>
     <h1>This is newest question</h1>
-    {% for que in question %}
-    <h3>{{que.title}}</h3>
-    <h4>{{que.question_desc}}</h4>
-    <h4>{{que.timestamp}}</h4>
+    {% for ans in answer %}
+    <h3>{{ans.title}}</h3>
+    <h4>{{ans.question_desc}}</h4>
+    <h4>{{ans.timestamp}}</h4>
     <img src="../../media/{{q.question_img}}"
     style="width: 100px;height:100px"  alt="img">
-    <a href='{% url "qna:update" q.id %}'><button>Update</button></a>
+    <a href= "{% url 'qna: updateanswer' q.id %}"><button>Update</button></a>
     <a href='{% url "qna:delete" q.id %}'><button>Delete</button></a>
 
      {% endfor %}
